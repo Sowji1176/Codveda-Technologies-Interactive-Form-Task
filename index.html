@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive interactive form with real-time input validation built using HTML, CSS, and JavaScript.">
+  <title>Interactive Form | Codveda Task 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <section class="intro-panel" aria-labelledby="page-title">
+      <a class="brand" href="#page-title" aria-label="Formwise home"><span class="brand-mark">F</span> Formwise</a>
+      <div class="intro-copy">
+        <p class="eyebrow">CODVEDA · FRONT-END TASK 2</p>
+        <h1 id="page-title">A better form starts with a better experience.</h1>
+        <p class="intro-text">Enter your details below. Helpful, real-time validation keeps the process clear from the first field to the final submission.</p>
+      </div>
+      <div class="trust-note"><span class="check-icon" aria-hidden="true">✓</span><span>Clear feedback · Accessible fields · No page refresh</span></div>
+    </section>
+
+    <section class="form-panel" aria-labelledby="form-heading">
+      <div class="form-heading">
+        <p class="eyebrow">GET STARTED</p>
+        <h2 id="form-heading">Create your account</h2>
+        <p>Fill in each field to continue.</p>
+      </div>
+
+      <form id="registration-form" novalidate>
+        <div class="field-group" data-field="name">
+          <label for="full-name">Full name</label>
+          <input type="text" id="full-name" name="name" placeholder="e.g. Sowjanya Kuppala" autocomplete="name" aria-describedby="name-error" required>
+          <small class="error-message" id="name-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field-group" data-field="email">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" aria-describedby="email-error" required>
+          <small class="error-message" id="email-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field-group" data-field="phone">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" placeholder="e.g. +91 98765 43210" autocomplete="tel" inputmode="tel" aria-describedby="phone-hint phone-error" required>
+          <small class="field-hint" id="phone-hint">Include your country code if needed.</small>
+          <small class="error-message" id="phone-error" aria-live="polite"></small>
+        </div>
+
+        <div class="field-group" data-field="password">
+          <label for="password">Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password" placeholder="Create a strong password" autocomplete="new-password" aria-describedby="password-hint password-error" required>
+            <button class="toggle-password" type="button" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+          <small class="field-hint" id="password-hint">At least 8 characters, with uppercase, lowercase, and a number.</small>
+          <small class="error-message" id="password-error" aria-live="polite"></small>
+          <div class="strength-track" aria-hidden="true"><span id="strength-bar"></span></div>
+          <small class="strength-label" id="strength-label" aria-live="polite">Password strength: not entered</small>
+        </div>
+
+        <div class="field-group" data-field="confirmPassword">
+          <label for="confirm-password">Confirm password</label>
+          <input type="password" id="confirm-password" name="confirmPassword" placeholder="Enter your password again" autocomplete="new-password" aria-describedby="confirmPassword-error" required>
+          <small class="error-message" id="confirmPassword-error" aria-live="polite"></small>
+        </div>
+
+        <button class="submit-button" type="submit">Create account <span aria-hidden="true">→</span></button>
+        <p class="form-footnote">Demo form for front-end validation practice. Your information is not sent to a server.</p>
+        <div id="form-message" class="form-message" role="status" aria-live="polite" tabindex="-1"></div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer">Built with HTML, CSS &amp; JavaScript <span aria-hidden="true">·</span> Codveda Task 2</footer>
+</body>
+</html>
